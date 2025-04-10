@@ -686,27 +686,27 @@ button:disabled {
     }
 
     .div1-search-container {
-        height: 50px; /* Original height on desktop */
-        width: 350px; /* Original fixed width */
-        justify-content: center;
-        display: flex;
-        align-items: center;
+        width: 450px; /* Wider on desktop */
+        height: 45px; /* Slightly taller */
+        max-width: 500px; /* Increased max width */
     }
     
     .div1-search-input {
-        font-size: 16px;
-        /* padding: 10px; */
+        font-size: 16px; /* Larger font */
+        padding: 8px 12px; /* More padding */
+    }
+    
+    #searchInput::placeholder {
+        font-size: 1em; /* Larger placeholder */
     }
     
     .search-icon-container {
-        width: 50px;
-        height: 45px;
-        align-items: center;
-
+        width: 45px; /* Larger click area */
+        height: 45px; /* Matches input height */
     }
     
     .search-icon {
-        width: 20px;
+        width: 20px; /* Larger icon */
         height: 20px;
     }
 }
