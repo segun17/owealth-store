@@ -17,10 +17,11 @@ body {
     color: orange;
 }
 
+
 .back-arrow {
     position: absolute;
     top: 20px;
-    left: 10px;
+    left: 1px;
     font-size: 24px;
     color: #FF6B00;
     cursor: pointer;
@@ -28,6 +29,7 @@ body {
     text-decoration: none;
     font-weight: bold;
 }
+
 
 .profile-container {
     position: relative;
