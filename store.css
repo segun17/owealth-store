@@ -687,17 +687,22 @@ button:disabled {
 
     .div1-search-container {
         height: 50px; /* Original height on desktop */
-        width: 340px; /* Original fixed width */
+        width: 350px; /* Original fixed width */
+        justify-content: center;
+        display: flex;
+        align-items: center;
     }
     
     .div1-search-input {
         font-size: 16px;
-        padding: 10px;
+        /* padding: 10px; */
     }
     
     .search-icon-container {
         width: 50px;
         height: 45px;
+        align-items: center;
+
     }
     
     .search-icon {
