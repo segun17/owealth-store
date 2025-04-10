@@ -79,13 +79,14 @@ body {
     color: #666;
 }
 
-.search-icon-container:hover {
+/* .search-icon-container:hover {
     background-color: #ff8c00;
-}
+} */
 
 .search-icon {
     width: 16px; /* Reduced from 20px */
-    height: 16px; /* Reduced from 20px */
+    height: 16px;
+    color: orange; /* Reduced from 20px */
 }
 
 .div1-menu-container {
