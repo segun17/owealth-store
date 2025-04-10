@@ -1,0 +1,147 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>sbc</title>
+        <link rel="stylesheet" href="store.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js"></script>
+    </head>
+    <body>
+
+        <div id="welcomePage">
+            <div class="welcome-logo">SBC STORES</div>
+            <div>Welcome to Your Premium Shopping Experience</div>
+            <div class="loader">
+                <div class="loader-circle"></div>
+                <div class="loader-circle" style="animation-delay: 0.2s; opacity: 0.7;"></div>
+                <div class="loader-circle" style="animation-delay: 0.4s; opacity: 0.4;"></div>
+            </div>
+        </div>
+
+
+        <header id="header">
+            <div class="div1-container">
+                <div class="div1-header">
+                    <div class="div1-search-container">
+                        <input type="search" id="searchInput" class="div1-search-input" placeholder="Search products...">
+                        <div class="search-icon-container" id="searchButton">
+                            <svg class="search-icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="white">
+                                <path d="m15.89 14.653-3.793-3.794a.37.37 0 0 0-.266-.109h-.412A6.499 6.499 0 0 0 6.5 0C2.91 0 0 2.91 0 6.5a6.499 6.499 0 0 0 10.75 4.919v.412c0 .1.04.194.11.266l3.793 3.794a.375.375 0 0 0 .531 0l.707-.707a.375.375 0 0 0 0-.53ZM6.5 11.5c-2.763 0-5-2.238-5-5 0-2.763 2.237-5 5-5 2.762 0 5 2.237 5 5 0 2.762-2.238 5-5 5Z"/>
+                            </svg>
+                        </div>
+                        <div class="search-results-dropdown" id="searchResultsDropdown"></div>
+                    </div>
+
+                    <div class="div1-menu-bar">
+                        <div class="div1-menu-container">
+                            <div class="menu-item"><a href="" data-category="All">All</a></div>
+                            <div class="menu-item"><a href="" data-category="Home">Home</a></div>
+                            <div class="menu-item"><a href="" data-category="Books">Books</a></div>
+                            <div class="menu-item"><a href="" data-category="Men">Men</a></div>
+                            <div class="menu-item"><a href="" data-category="Women">Women</a></div>
+                            <div class="menu-item"><a href="" data-category="Sports">Sports</a></div>
+                            <div class="menu-item"><a href="" data-category="Jewelry">Jewelry</a></div>
+                            <div class="menu-item"><a href="" data-category="Bags">Bags</a></div>
+                            <div class="menu-item"><a href="" data-category="Electronics">Electronics</a></div>
+                            <div class="menu-item"><a href="" data-category="Toys">Toys</a></div>
+                            <div class="menu-item"><a href="" data-category="Appliances">Appliances</a></div>
+                            <div class="menu-item"><a href="" data-category="Health">Health</a></div>
+                            <div class="menu-item"><a href="" data-category="Automotive">Automotive</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="transaction-alert">
+            <!-- <svg class="bell-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="orange">
+                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.93 6 11v5l-2 2v1h16v-1l-2-2z"/>
+            </svg> -->
+            <marquee behavior="scroll" direction="left" scrollamount="5">
+                Important Notice: Transactions above ₦500,000 cannot be made once.  Due to payment gateway limits, for complaints or assistance, please contact our customer service  thank you.
+            </marquee>
+        </div>
+
+        <div class="main-container" id="mainContainer">
+            <div class="product-grid" id="productList"></div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-holder">
+                <a href="?category=All" class="content-holder">
+                    <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                    <div class="home">Home</div>
+                </a>
+                <a href="category.html" class="content-holder">
+                    <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                    </svg>
+                    <div class="cate">Categories</div>
+                </a>
+            <a href="profile.html" class="content-holder" id="profileLink">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>You</span>
+            </a>
+
+                <a href="cartfooter.html" class="content-holder">
+                    <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2zM7.16 14l.94-2h8.9c.75 0 1.41-.41 1.75-1.03l3.24-6.03-1.71-.96L17.4 10H8.53L7.16 7H2v2h3l3.6 7.59-1.35 2.44c-.2.36-.25.78-.15 1.17.15.58.66 1 1.27 1H19v-2H7.42c-.13 0-.25-.09-.29-.22l.03-.06z"/>
+                    </svg>
+                    <div class="carti">Cart <span class="cart-count">0</span></div>
+                </a>
+            </div>
+        </footer>
+
+        <div class="product-detail-page" id="productDetailPage">
+            <div class="product-detail-image-container">
+                <div class="back-button" id="backButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" height="9000px" width="900px" version="1.1" id="Layer-1" viewBox="0 0 512 512">
+                        <g>
+                            <g>
+                                <path d="M491.841,156.427c-19.471-45.946-51.936-85.013-92.786-112.637C358.217,16.166,308.893-0.007,256,0    c-35.254-0.002-68.946,7.18-99.571,20.158C110.484,39.63,71.416,72.093,43.791,112.943C16.167,153.779-0.007,203.104,0,256    c-0.002,35.255,7.181,68.948,20.159,99.573c19.471,45.946,51.937,85.013,92.786,112.637C153.783,495.834,203.107,512.007,256,512    c35.253,0.002,68.946-7.18,99.571-20.158c45.945-19.471,85.013-51.935,112.638-92.785C495.834,358.22,512.007,308.894,512,256    C512.002,220.744,504.819,187.052,491.841,156.427z M460.413,342.257c-16.851,39.781-45.045,73.724-80.476,97.676    c-35.443,23.953-78.02,37.926-123.936,37.933c-30.619-0.002-59.729-6.218-86.255-17.454    c-39.781-16.85-73.724-45.044-97.677-80.475C48.114,344.495,34.14,301.917,34.133,256c0.002-30.62,6.219-59.731,17.454-86.257    c16.851-39.781,45.045-73.724,80.476-97.676C167.506,48.113,210.084,34.14,256,34.133c30.619,0.002,59.729,6.218,86.255,17.454    c39.781,16.85,73.724,45.044,97.677,80.475c23.953,35.443,37.927,78.02,37.934,123.939    C477.864,286.62,471.648,315.731,460.413,342.257z"/>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <path d="M317.184,365.164L152.616,256l164.568-109.163c7.685-5.098,9.784-15.461,4.685-23.146    c-5.098-7.686-15.461-9.784-23.146-4.685L113.174,242.084c-4.652,3.086-7.468,8.333-7.468,13.916s2.815,10.829,7.468,13.916    l185.547,123.079c7.686,5.098,18.049,3,23.147-4.685C326.966,380.626,324.869,370.262,317.184,365.164z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <img class="product-detail-image" id="productDetailImage" src="" alt="Product Image">
+            </div>
+            <div class="product-detail-description" id="productDetailDescription"></div>
+        </div>
+
+        <!-- Signup Modal -->
+        <div id="signupModal" class="modal">
+            <div class="modal-content">
+                <p>Please sign up before adding items to your cart.</p>
+                <button id="modalSignupButton">Sign Up Now</button>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="modal">
+            <div class="success-modal-content">
+                <img id="successModalImage" src="" alt="Product Image">
+                <p id="successModalMessage">Item successfully added to cart!</p>
+            </div>
+        </div>
+        
+        <!-- Alert Modal -->
+        <div id="alertModal" class="modal">
+            <div class="alert-modal-content">
+                <p id="alertModalMessage"></p>
+                <button id="alertModalButton">OK</button>
+            </div>
+        </div>
+
+        <script type="module" src="store.js"></script>
+    </body>
+    </html>

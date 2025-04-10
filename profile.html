@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="profile.css">
+    
+</head>
+<body>
+    <div class="profile-container">
+        <a href="store.html" class="back-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#E55C00" height="40px" width="40px" version="1.1" id="Layer_1" viewBox="0 0 512 512" xml:space="preserve">
+                <g>
+                    <g>
+                        <g>
+                            <path d="M256,5.333C114.88,5.333,0,117.76,0,256s114.88,250.667,256,250.667S512,394.24,512,256S397.12,5.333,256,5.333z      M256,485.333C126.613,485.333,21.333,382.4,21.333,256S126.613,26.667,256,26.667S490.667,129.493,490.667,256     S385.387,485.333,256,485.333z"/>
+                            <path d="M337.387,381.013c-0.107-0.107-0.32-0.213-0.427-0.32L167.36,256l169.6-124.8c4.8-3.413,5.76-10.133,2.347-14.827     c-3.52-4.8-10.133-5.76-14.933-2.24L143.04,247.467c-4.693,3.52-5.76,10.133-2.24,14.933c0.64,0.853,1.387,1.6,2.24,2.24     l181.333,133.227c4.693,3.627,11.307,2.773,14.933-1.92C342.933,391.253,342.08,384.64,337.387,381.013z"/>
+                        </g>
+                    </g>
+                </g>
+                </svg>
+        </a>
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="spinner"></div>
+        </div>
+
+        <div class="profile-header">
+            <div class="profile-picture" onclick="document.getElementById('fileInput').click()">
+                <img id="profileImage" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDQuMUMxNi41MzQgNC4xIDIwLjEgNy41NjYgMjAuMSAxMi4xQzIwLjEgMTYuNjM0IDE2LjUzNCAyMC4xIDEyIDIwLjFDNy40NjYgMjAuMSAzLjkgMTYuNjM0IDMuOSAxMi4xQzMuOSA3LjU2NiA3LjQ2NiA0LjEgMTIgNC4xTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJDNi40NzcgMjIgMTIgMjIgMTIgMjJDNy41MjMgMjIgMjIgMTcuNTIzIDIyIDEyQzIyIDYuNDc3IDE3LjUyMyAyIDEyIDJaIi8+PC9zdmc+" alt="Profile Picture">
+                <div class="camera-overlay">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMTVjMS42NTcgMCAzLTEuMzQzIDMtMyAwLS4zNTMtLjA3Mi0uNjg2LS4xOTQtLjk5NGwuODY3LS4yOTljLjE4MS0uMDYyLjM4LS4wOTkuNjA5LS4wOTlDMjAuMzc3IDkgMjEgOS44OTcgMjEgMTB2OC4wMDFjMCAxLjEwNC0uODk2IDItMiAyaC0xNGMtMS4xMDUgMC0yLS44OTYtMi0yVjEwYzAtMS4xMDUuODk1LTIgMi0yIC43OTIgMCAxLjU1OC40MzEgMS45NDEgMS4wODRsLjE4OC4zMjguNDU1LS4xMThjLjE2LS4wNDEuMzI5LS4wNjMuNTA2LS4wNjQuNDgyIDAgLjg5Ny4yOSAxLjEwMy43NDRMOS42MjMgOS4yOWMuMjA5LjQ1Ni4xMzQuOTYtLjIxMiAxLjI4OEM5LjA1NCAxMS4wMDcgOC41NTYgMTEgOCAxMWMtMi4yMDkgMCA0IDEuNzkxIDQgNHMxLjc5MSA0IDQgNCA0LTEuNzkxIDQtNHoiLz48L3N2Zz4=" class="camera-icon">
+                </div>
+                <input type="file" id="fileInput" accept="image/*">
+            </div>
+            <div class="greeting">
+                <h2><span id="greetingText"></span> <span id="greetingName"></span>!</h2>
+            </div>
+        </div>
+
+        <div class="profile-info">
+            <button id="refreshProfile" class="refresh-btn">↻ Refresh Profile</button>
+
+            <div class="info-item">
+                <span class="info-label">First Name:</span>
+                <span class="info-content" id="firstName"></span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Last Name:</span>
+                <span class="info-content" id="lastName"></span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Email:</span>
+                <span class="info-content" id="email"></span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Phone:</span>
+                <span class="info-content" id="phone"></span>
+            </div>
+
+            <a href="order-history.html" class="order-history-link">
+                View Your Order History
+            </a>
+
+            <div class="customer-care">
+                <p>Need help? Contact our customer care:</p>
+                <a href="tel:07063537673">📞 07063537673</a>
+            </div>
+
+            <div class="sign-out-item">
+                <span class="sign-out-link" id="signOutLink">Sign Out</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="profile.js"></script>
+</body>
+</html>

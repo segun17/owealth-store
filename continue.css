@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    background-color:white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    color: #2d3436;
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+}
+
+#style-1 { color: orange; }
+#style-2 { color: rgb(245, 167, 23); }
+#style-3 { color: blue; }
+
+.header p {
+    color: #636e72;
+    font-size: 1.1rem;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem;
+}
+
+.auth-option {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.75rem 0;
+    border: 2px solid #dfe6e9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.auth-option span {
+    font-size: 1.4em;
+}
+
+.auth-option:hover {
+    border-color: orange;
+    transform: translateY(-2px);
+}
+
+.auth-option svg {
+    width: 24px;
+    height: 24px;
+}
+
+.email-icon { color: black; }
+.phone-icon { color: black; }
+.facebook-icon { color: blue; }
+.google-icon { color: green; }

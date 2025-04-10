@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Paystack must load first -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <link rel="stylesheet" href="checkout.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="checkout-header">
+            <h1>Secure Checkout</h1>
+        </div>
+        
+        <div class="checkout-steps">
+            <div class="step active" id="step1">1. Information</div>
+            <div class="step" id="step2">2. Payment</div>
+            <div class="step" id="step3">3. Confirmation</div>
+        </div>
+        
+        <div id="customerInfoPanel" class="panel">
+            <h2 class="panel-title">Customer Information</h2>
+            <div id="customerInfoError" class="error-message hidden"></div>
+            
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" required>
+            </div>
+            
+            <button id="continueToShipping" class="btn" >Continue to Shipping</button>
+        </div>
+        
+        <div id="shippingPanel" class="panel hidden">
+            <h2 class="panel-title">Shipping Information</h2>
+            <div id="shippingError" class="error-message hidden"></div>
+            
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="state">State</label>
+                <select id="state" required>
+                    <option value="">Select State</option>
+                    <option value="Lagos">Lagos</option>
+                    <option value="Abuja">Abuja</option>
+                    <option value="Kano">Kano</option>
+                    <option value="Kano">Ibadan</option>
+                    <option value="Kano">Abeokuta</option>
+                    <option value="Kano">Ondo</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required>
+            </div>
+            
+            <button id="continueToPayment" class="btn">Continue to Payment</button>
+        </div>
+        
+        <div id="paymentPanel" class="panel hidden">
+            <h2 class="panel-title">Payment Method</h2>
+            <div id="paymentError" class="error-message hidden"></div>
+            
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="orderItems">
+                    <div class="loading">Loading your cart items...</div>
+                </div>
+                <div class="order-total" id="orderTotal">Total: ₦0.00</div>
+            </div>
+            
+            <button id="payButton" class="btn">Pay Now</button>
+        </div>
+        
+        <div id="confirmationPanel" class="panel hidden">
+            <h2 class="panel-title">Order Confirmation</h2>
+            <div id="confirmationContent">
+                <div class="loading">Processing your order...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="checkout.js"></script>
+</body>
+</html>

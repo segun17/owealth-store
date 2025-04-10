@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up - SBC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="signup.css">
+    
+</head>
+<body>
+    <div class="auth-container">
+        <h2>Create Account In SBC-Store</h2>
+        <form id="signupForm">
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
+            <div class="phone-input">
+                <div class="country-code-selector">
+                    <select id="countryCode">
+                        <option value="234">Nigeria (+234)</option>
+                        <option value="1">United States (+1)</option>
+                        <option value="44">UK (+44)</option>
+                    </select>
+                </div>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+            </div>
+            <input type="email" id="email" placeholder="Email" required>
+            <div class="password-container">
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="button" class="toggle-password">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="policy-checkbox">
+                <input type="checkbox" id="agreePolicy" required>
+                <label for="agreePolicy">
+                    I agree to the <a href="#terms">Terms of Service</a> and 
+                    <a href="#privacy">Privacy Policy</a>
+                </label>
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="loader" id="loader"></div>
+        <div id="errorMessage" class="error-message"></div>
+        <p style="text-align: center; margin-top: 1rem;">
+            Already have an account? <a href="login.html">Login</a>
+        </p>
+    </div>
+
+    <!-- Email Sent Modal -->
+    <div id="verificationModal">
+        <div class="modal-content">
+            <h3>📨 Verification Email Sent</h3>
+            <p>We've sent a verification link to your email address. Please check your inbox.</p>
+            <button onclick="closeVerificationModal()">OK</button>
+        </div>
+    </div>
+
+    <!-- Verification Check Modal -->
+    <div id="verificationSuccessModal">
+        <div class="modal-content">
+            <h3>✅ Email Verification Check</h3>
+            <p>Click below if you've verified your email</p>
+            <div class="modal-buttons">
+                <button onclick="handleVerifiedClick()" id="verifiedButton">I'm Verified - Take me to Store</button>
+                <div class="loader modal-loader" id="modalLoader"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="signup.js"></script>
+</body>
+</html>

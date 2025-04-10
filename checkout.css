@@ -1,0 +1,177 @@
+:root {
+    --primary: orange;
+    --primary-dark: rgb(254, 179, 39);
+    --success: #24b47e;
+    --error: #f0616f;
+    --text: #32325d;
+    --text-light: #6b7c93;
+    --border: #e1e1e8;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'poppins', Roboto, sans-serif;
+    color: var(--text);
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background-color: #f6f9fc;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.checkout-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.checkout-steps {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.step {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+
+.step.active {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.step.completed {
+    color: var(--success);
+}
+
+.panel {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+}
+
+.btn:disabled {
+    background: #aab7c4;
+    cursor: not-allowed;
+}
+
+.order-summary {
+    border-top: 1px solid var(--border);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.order-item {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.order-item-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.order-item-details {
+    flex: 1;
+}
+
+.order-item-title {
+    font-weight: 500;
+    margin: 0 0 5px 0;
+}
+
+.order-item-price {
+    color: var(--text-light);
+    margin: 0;
+}
+
+.order-total {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.error-message {
+    color: var(--error);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Stock warning styles */
+.stock-warning {
+    color: #e67e22;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.out-of-stock {
+    color: var(--error);
+    font-weight: bold;
+}
