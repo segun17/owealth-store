@@ -687,11 +687,12 @@ button:disabled {
 
     /* Enhanced search container styling */
     .div1-search-container {
-        width: 800px; /* Even wider for laptop screens */
+        width: 1000px; /* Even wider for laptop screens */
         height: 48px; /* Slightly taller */
         max-width: none; /* Remove max-width restriction */
         display: flex;
-        align-items: center; /* Perfect vertical alignment */
+        align-items: center;
+        justify-content: space-around; /* Perfect vertical alignment */
     }
     
     .div1-search-input {
