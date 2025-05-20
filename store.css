@@ -685,23 +685,22 @@ button:disabled {
         min-height: 80vh;
     }
 
-    /* Enhanced search container styling */
+    
     .div1-search-container {
-        width: 1000px; /* Even wider for laptop screens */
-        height: 48px; /* Slightly taller */
-        max-width: none; /* Remove max-width restriction */
+        width: 1000px; 
+        height: 48px; 
+        max-width: none; 
         display: flex;
         align-items: center;
         justify-content: space-around;
-        margin-left: 8%;
+        margin-left: 11%;
     }
     
     .div1-search-input {
         font-size: 16px;
-        padding: 12px 20px; /* More vertical padding for better proportions */
-        height: 100%; /* Take full height of container */
-        flex-grow: 1; /* Allow input to fill available space */
-        border-radius: 24px 0 0 24px; /* Rounded left side */
+        padding: 12px 20px; 
+        height: 100%; 
+        border-radius: 24px 0 0 24px; 
     }
     
     #searchInput::placeholder {
@@ -709,8 +708,7 @@ button:disabled {
     }
     
     .search-icon-container {
-        width: 48px; /* Matches container height */
-        height: 100%; /* Full height */
+        width: 48px; 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -718,7 +716,7 @@ button:disabled {
     }
     
     .search-icon {
-        width: 22px; /* Slightly larger */
+        width: 22px; 
         height: 22px;
     }
 }
