@@ -687,7 +687,7 @@ button:disabled {
 
     /* Enhanced search container styling */
     .div1-search-container {
-        width: 600px; /* Even wider for laptop screens */
+        width: 800px; /* Even wider for laptop screens */
         height: 48px; /* Slightly taller */
         max-width: none; /* Remove max-width restriction */
         display: flex;
@@ -707,18 +707,16 @@ button:disabled {
     }
     
     .search-icon-container {
-        width: 48px; 
-        height: 100%; 
+        width: 48px; /* Matches container height */
+        height: 100%; /* Full height */
         display: flex;
         align-items: center;
         justify-content: center;
-        background: orange; 
-        border-radius: 0 24px 24px 0; 
         cursor: pointer;
     }
     
     .search-icon {
-        width: 22px;
+        width: 22px; /* Slightly larger */
         height: 22px;
     }
 }
