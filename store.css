@@ -692,7 +692,8 @@ button:disabled {
         max-width: none; /* Remove max-width restriction */
         display: flex;
         align-items: center;
-        justify-content: space-around; /* Perfect vertical alignment */
+        justify-content: space-around;
+        padding-left: 10px; /* Perfect vertical alignment */
     }
     
     .div1-search-input {
