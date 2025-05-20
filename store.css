@@ -693,8 +693,7 @@ button:disabled {
         display: flex;
         align-items: center;
         justify-content: space-around;
-        margin-left: 6%;
-        border:2px solid red; /* Perfect vertical alignment */
+        margin-left: 8%;
     }
     
     .div1-search-input {
